@@ -185,7 +185,7 @@ body {
 
 #mohit {
 font-family: "Comic Sans MS", cursive, sans-serif;
-font-size: 14px;
+font-size: 22px;
 letter-spacing: 2px;
 word-spacing: 2px;
 color: #fffff;
@@ -220,5 +220,6 @@ text-transform: lowercase;
         padding: 15px;
     }
 }
+
 
 

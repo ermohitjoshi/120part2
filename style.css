@@ -203,7 +203,7 @@ text-transform: lowercase;
 }
 
 .nav-buttons button {
-    background-color: #4caf50;
+    background-color: #147ce5;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -213,7 +213,7 @@ text-transform: lowercase;
 }
 
 .nav-buttons button:hover {
-    background-color: #45a049;
+    background-color: #147ce5;
     }
 
 @media (max-width: 768px) {
@@ -240,6 +240,7 @@ text-transform: lowercase;
         padding: 15px;
     }
 }
+
 
 
 

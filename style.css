@@ -188,7 +188,7 @@ font-family: "Comic Sans MS", cursive, sans-serif;
 font-size: 14px;
 letter-spacing: 2px;
 word-spacing: 2px;
-color: #000000;
+color: #fffff;
 font-weight: normal;
 text-decoration: none;
 font-style: italic;
@@ -220,4 +220,5 @@ text-transform: lowercase;
         padding: 15px;
     }
 }
+
 

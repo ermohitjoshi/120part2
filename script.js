@@ -4,10 +4,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const sidebar = document.querySelector('.sidebar');
 
-    function showSection(id) {
-        sections.forEach(section => section.classList.remove('active'));
-        document.querySelector(id).classList.add('active');
-    }
+ function showSection(id) {
+    sections.forEach(section => section.classList.remove('active'));
+    document.querySelector(id).classList.add('active');
+
+    // Always scroll to top of the page when switching rules
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
 
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -76,4 +83,5 @@ document.addEventListener('DOMContentLoaded', () => {
         section.appendChild(navDiv);
     });
 });
+
 

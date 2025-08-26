@@ -9,10 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelector(id).classList.add('active');
 
     // Always scroll to top of the page when switching rules
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
+// Always scroll to top of the page when switching rules
+window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+});
+
 }
 
 
@@ -83,5 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
         section.appendChild(navDiv);
     });
 });
+
 
 

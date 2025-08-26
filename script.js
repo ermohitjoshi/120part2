@@ -4,18 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const sidebar = document.querySelector('.sidebar');
 
- function showSection(id) {
-    sections.forEach(section => section.classList.remove('active'));
-    document.querySelector(id).classList.add('active');
+    function showSection(id) {
+        sections.forEach(section => section.classList.remove('active'));
+        document.querySelector(id).classList.add('active');
 
-// Always scroll to top of the selected rule
-document.querySelector(id).scrollIntoView({
-    behavior: "smooth",
-    block: "start"
-});
-
-}
-
+        // Always scroll to top of the selected rule
+        document.querySelector(id).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
 
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -41,12 +39,8 @@ document.querySelector(id).scrollIntoView({
     if (sections.length > 0) {
         showSection(navLinks[0].getAttribute('href'));
     }
-});
 
-// Automatically add Next/Previous buttons to all rule sections
-document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('.rule-section');
-
+    // 🔹 Automatically add Next/Previous buttons to all rule sections
     sections.forEach((section, index) => {
         const navDiv = document.createElement('div');
         navDiv.classList.add('nav-buttons');
@@ -58,10 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
             prevBtn.classList.add('prev-btn');
             prevBtn.addEventListener('click', () => {
                 const targetId = '#rule' + (index);
-                document.querySelectorAll('.sidebar nav ul li a').forEach(link => link.classList.remove('active'));
+                navLinks.forEach(link => link.classList.remove('active'));
                 document.querySelector(`.sidebar nav ul li a[href="${targetId}"]`).classList.add('active');
-                sections.forEach(s => s.classList.remove('active'));
-                document.querySelector(targetId).classList.add('active');
+
+                // Use showSection (with scroll)
+                setTimeout(() => showSection(targetId), 50);
             });
             navDiv.appendChild(prevBtn);
         }
@@ -73,10 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
             nextBtn.classList.add('next-btn');
             nextBtn.addEventListener('click', () => {
                 const targetId = '#rule' + (index + 2);
-                document.querySelectorAll('.sidebar nav ul li a').forEach(link => link.classList.remove('active'));
+                navLinks.forEach(link => link.classList.remove('active'));
                 document.querySelector(`.sidebar nav ul li a[href="${targetId}"]`).classList.add('active');
-                sections.forEach(s => s.classList.remove('active'));
-                document.querySelector(targetId).classList.add('active');
+
+                // Use showSection (with scroll)
+                setTimeout(() => showSection(targetId), 50);
             });
             navDiv.appendChild(nextBtn);
         }
@@ -84,7 +80,3 @@ document.addEventListener('DOMContentLoaded', () => {
         section.appendChild(navDiv);
     });
 });
-
-
-
-

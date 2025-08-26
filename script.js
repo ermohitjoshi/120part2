@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Always scroll to top of the page when switching rules
     window.scrollTo({
         top: 0,
-        behavior: "smooth"
+        // behavior: "smooth"
     });
 }
 
@@ -83,4 +83,5 @@ document.addEventListener('DOMContentLoaded', () => {
         section.appendChild(navDiv);
     });
 });
+
 
